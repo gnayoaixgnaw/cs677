@@ -1,0 +1,106 @@
+1.
+	1.
+SPY:
+ 
+WMT:
+ 
+	2. 
+
+	SPY	WMT
+accuracy	53.51%	53.51%
+	3. 
+k\accuracy	SPY	WMT
+1	24.88%	24.88%
+2	11.57%	11.57%
+3	5.38%	5.38%
+	4.
+k\accuracy	SPY	WMT
+1	28.63%	28.63%
+2	15.32%	15.32%
+3	8.20%	8.20%
+
+
+2.
+	1.
+SPY:
+ 
+ 
+
+WMT:
+ 
+ 
+
+	2.
+w	SPY_18	SPY_19	WMT_18	WMT_19
+2	48.61%	50.00%	48.21%	50.00%
+3	47.01%	46.03%	48.21%	53.97%
+4	51.39%	53.97%	47.01%	50.40%
+
+	3. 
+For SPY: w* is w = 4
+For WMT :w* is w = 2(though the accuracy of w2 seems not the best of these three, but the graph shows that w2 works best, I will explain it in question 5)
+
+3.
+	1.
+SPY
+ 
+ 
+WMT:
+ 
+ 
+	2.
+18	SPY	WMT
+	47.81%	46.61%
+
+19	SPY	WMT
+	50.00%	54.37%
+	3 and 4.
+18	SPY +	SPY -	WMT +	WMT -
+W =2	45.19%	52.59%	48.80%	47.62%
+W =3	54.07%	38.79%	72.80%	23.81%
+W =4	58.52%	43.10%	65.60%	28.57%
+ensemble	50.37%	44.83%	64.80%	28.57%
+
+19	SPY +	SPY -	WMT +	WMT -
+W =2	42.00%	61.76%	42.47%	60.38%
+W =3	48.00%	43.14%	69.86%	32.08%
+W =4	57.33%	49.02%	61.64%	34.91%
+ensemble	48.67%	50.98%	65.75%	38.68%
+We can see that for SPY ensemble did not improve the accuracy on predicting “+” ,for WMT, there can be a little improve.
+On predicting “-”, ensemble seems did not improve the accuracy for both SPY and WMT.
+
+4.
+w/18	ticker	TP	FP	TN	FN	accuracy	TPR	TNR
+2	SPY	61	55	61	74	48.61%	45.19%	52.59%
+3	SPY	73	71	45	62	46.61%	54.07%	38.79%
+4	SPY	79	66	50	56	51.39%	58.52%	43.10%
+ensemble	SPY	68	64	52	67	47.81%	50.37%	44.83%
+2	WMT	61	66	60	64	48.21%	48.80%	47.62%
+3	WMT	91	96	30	34	48.21%	72.80%	23.81%
+4	WMT	82	90	36	43	47.01%	65.60%	28.57%
+ensemble	WMT	81	90	36	44	46.61%	64.80%	28.57%
+
+w/19	ticker	TP	FP	TN	FN	accuracy	TPR	TNR
+2	SPY	63	39	63	87	50.00%	42.00%	61.76%
+3	SPY	72	58	44	78	46.03%	48.00%	43.14%
+4	SPY	86	52	50	64	53.97%	57.33%	49.02%
+ensemble	SPY	73	50	52	77	49.60%	48.67%	50.98%
+2	WMT	63	43	63	83	50.00%	42.47%	60.38%
+3	WMT	102	72	34	44	53.97%	69.86%	32.08%
+4	WMT	90	69	37	56	50.40%	61.64%	34.91%
+ensemble	WMT	96	65	41	50	54.37%	65.75%	38.68%
+
+I can find that for my stock, which is WMT, the accuracy of predict positive is quite high, compared with that of negative
+5.
+W =3:
+ 
+W=4:
+ 
+W =2/W*:
+ 
+I compared the three graphs ,and found that w=2 works best in predicting. 
+But, we know from the previous data that W =2 do not have the highest accuracy, so I try to find some other reasons why it works better than w=3 and w=4,I found that the w=2 has the accuracy of predicting negative, this means that we will more likely to bypass the negative return,this 
+We can see from the graph (w*) that in 2018 ,which is the first half of the line graph, lines of ensemble and W* are both above that of real(w* is better). This indicate that the predict mode works well , however ,by the end of 2018, both models do not perform well and the amounts of ensemble and W* becomes closed to real.
+In 2019,emsemble is not working well, whereas W* works better ,the lines of them are closed to real in the first half of 2019,but the gaps between them raised in the last half of 2019, both W* and emsemble do not work well. 
+
+
